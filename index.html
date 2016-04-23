@@ -1,0 +1,64 @@
+<!-- Super light javascript code to get functionality of a fading slider type effect that supports text description -->
+
+<html>
+<head>
+<script src="jq.js"></script>
+<script>
+$(document).ready(function(){
+    var currentImage = $("#images img:first");
+   var currentDesc =  $("#desc h1:first");
+    
+    setInterval(function(){
+        currentImage.fadeOut();
+currentDesc.fadeOut();
+        
+        if(currentImage.next().size() && currentDesc.next().size())
+            {currentImage = currentImage.next();
+	   currentDesc = currenDesc.next();
+}
+        else
+           { currentImage = currentImage.siblings().first();
+	currentDesc = currentDesc.siblings().first();
+}
+        
+        currentImage.fadeIn();
+       currentDesc.fadeIn();
+    }, 2000)
+});    
+</script>
+<style>
+img{
+position:absolute;
+}
+#images {
+    position:absolute;
+}
+#images img {
+    position:absolute;
+}
+#desc {
+    position:absolute;
+}
+#desc h1 {
+    position:absolute;
+}
+
+</style>
+</head>
+
+<body>
+<img src="back1.jpeg" />
+
+
+<div id ="desc">
+<h1>ETIOS IS THE CAR !</h1>
+<h1 style="display:none">NO ! TRAVELLER IS THE CAR</h1>
+</div>
+
+<div id ="images">
+    <img src="back1.png"/>  
+    <img src="Etios.png" style="display:none;" /> 
+    <img src="3.jpeg" style="display:none;" />
+</div>
+</body>
+</html>
